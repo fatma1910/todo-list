@@ -76,3 +76,19 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.swal2-confirm {
+  @apply bg-green-500 text-white px-4 py-2 rounded font-bold transition ml-4;
+}
+
+.swal2-confirm:hover {
+  @apply bg-green-600;
+}
+
+.swal2-cancel {
+  @apply bg-red-500 text-white px-4 py-2 rounded font-bold transition;
+}
+
+.swal2-cancel:hover {
+  @apply bg-red-600;
+}
