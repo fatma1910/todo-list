@@ -24,10 +24,12 @@ const page = () => {
         .set({ checked: !currentChecked })
         .where(eq(Task.id, taskId));
       getAllTasks();
+
     } catch (error) {
       console.error("Error updating task:", error);
     }
   };
+
 
   useEffect(() => {
     user && getAllTasks();
@@ -116,20 +118,13 @@ const page = () => {
             <div key={task.id} className="w-full md:w-[750px] px-4 ">
               <div className="flex justify-between items-center py-2 px-1 rounded-md border-b bg-slate-50 shadow-sm">
                 <div className="flex items-center space-x-2">
-                  {task.checked ? (
                     <Checkbox
                       id={`task-${task.id}`}
                       className="w-6 h-6"
                       onClick={() => toggleCheck(task.id, task.checked)}
-                      checked
+                      checked={task.checked}
                     />
-                  ) : (
-                    <Checkbox
-                      id={`task-${task.id}`}
-                      className="w-6 h-6"
-                      onClick={() => toggleCheck(task.id, task.checked)}
-                    />
-                  )}
+                  
 
                   <label
                     htmlFor={`task-${task.id}`}
